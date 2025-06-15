@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Admin
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
-            $table->foreignId('driver_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('orderer_id')->nullable()->constrained()->onDelete('set null');
             $table->string('destination');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
