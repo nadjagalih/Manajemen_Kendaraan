@@ -29,6 +29,7 @@ class VehicleUsageBarChart extends ChartWidget
         // Ambil semua kendaraan
         $vehicles = Vehicle::with(['bookings' => function ($q) {
             $q->selectRaw('vehicle_id, MONTH(start_time) as bulan, COUNT(*) as total')
+                ->where('current_approval', 2)
               ->groupBy('vehicle_id', 'bulan');
         }])->get();
 

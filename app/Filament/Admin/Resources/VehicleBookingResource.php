@@ -97,7 +97,7 @@ public static function table(Table $table): Table
             ->label('Selesai')
             ->dateTime('d M Y H:i'),
 
-        Tables\Columns\TextColumn::make('status')
+        Tables\Columns\TextColumn::make('approval_status')
             ->label('Status')
             ->badge()
             ->color(fn (string $state): string => match ($state) {
